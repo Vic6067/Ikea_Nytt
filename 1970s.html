@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to the 1970s</title>
 
-    <style>
-
+<style>
 * {
     box-sizing: border-box;
 }
@@ -23,12 +22,59 @@ body {
     background-color: papayawhip;
 }
 
+.ALLCONTAINER{
+    background-color:#ffffff;
+    padding:50px 100px;
+    margin:40px auto;
+    max-width:1600px;
+    border-radius:40px;
+    border:5px solid #ffffff;
+}
+
 /* Make all images responsive */
 img{
     max-width:100%;
     height:auto;
+    border-radius:20px;
 }
 
+/* layout fix */
+.content,
+.column,
+.columnA {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.column,
+.columnA {
+    flex-wrap: wrap;
+}
+
+p {
+    margin: 0;
+}
+
+.image,
+.img {
+    flex: 0 0 300px;
+}
+
+.caption,
+.column p,
+.content p {
+    flex: 1;
+}
+
+/* NEW: small heading style */
+h4 {
+    margin-bottom: 10px;
+    color: #0058A3;
+}
+
+/* HEADER */
 header {
     background-color: #FFDB00;
     color: #0058A3;
@@ -65,7 +111,7 @@ nav a:hover {
 }
 
 .heading h1 {
-    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-size: 6rem;
     color: #0058A3;
     -webkit-text-stroke: #ffffff 0.2px;
     margin: 0;
@@ -73,7 +119,7 @@ nav a:hover {
 }
 
 h1 {
-    text-align: right;
+    text-align: center;
     font-size: 4rem;
 }
 
@@ -84,50 +130,6 @@ h3 {
     padding: 2px;
 }
 
-.content {
-    border-radius: 10px;
-    background-color: papayawhip;
-    columns: 3;
-    column-gap: 40px;
-    column-rule: 1px solid #000000;
-}
-
-.image{
-    display: flex;
-    justify-content: center;
-}
-
-.column{
-    display: flex;
-    justify-content: center;
-    padding: 50px 100px;
-    width: 100%;
-    height: 100%;
-    columns: 2;
-    column-gap: 40px;
-    flex-wrap: wrap;
-    gap:20px;
-}
-
-.columnA{
-    display: flex;
-    justify-content: left;
-    padding: 50px 100px;
-    width: 100%;
-    height: 100%;
-    columns: 2;
-    column-gap: 100px;
-    flex-wrap: wrap;
-    gap:20px;
-}
-
-.caption{
-    display: flex;
-    justify-content: right;
-    padding: 50px 100px;
-    max-width: 500px;
-}
-
 footer {
     text-align: center;
     padding: 20px;
@@ -135,27 +137,17 @@ footer {
     color: #0058A3;
 }
 
+/*the following responsive design code was sourced from GEN AI*/
 /* ---------- Tablet ---------- */
-
 @media (max-width: 1024px){
-
-.content{
-    columns:2;
-}
-
+.content,
 .column,
 .columnA{
-    padding:40px 50px;
+    flex-direction: column;
 }
-
-.caption{
-    padding:30px 50px;
-}
-
 }
 
 /* ---------- Mobile ---------- */
-
 @media (max-width:768px){
 
 header{
@@ -172,28 +164,11 @@ h3{
     font-size:2.5rem;
 }
 
-/* collapse multi-columns */
-.content{
-    columns:1;
-}
-
-/* stack rows */
+.content,
 .column,
 .columnA{
     flex-direction:column;
-    padding:30px 20px;
-    text-align:center;
-}
-
-.caption{
     padding:20px;
-    max-width:100%;
-    justify-content:center;
-}
-
-/* fix small captions */
-.column p{
-    max-width:100% !important;
 }
 
 .heading{
@@ -201,74 +176,84 @@ h3{
 }
 
 }
-
 </style>
 </head>
+
 <body>
 
 <header>
-    <h2>Ikéa-Nytt</h2>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="1980s.html">Move to the 1980s</a>
-    </nav>
+<h2>Ikéa-Nytt</h2>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="1980s.html">Move to the 1980s</a>
+</nav>
 </header>
 
 <section class="heading">
     <h1>IKEA 1970</h1>
 </section>
 
- <h3 style="text-align: center;">HEADING</h3>
+<section class="ALLCONTAINER">
 
+<h3>HEADING</h3>
+
+<!-- FIRST IMAGE + TEXT -->
 <section class="content">
-
     <div class="image">
-            <img src="70-1.png" alt="1970s living room" style="width: 80%; height: auto; 80%">
-        </div> 
+        <img src="70-1.png" alt="1970s living room">
+    </div> 
 
-    <p>
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed nisl nisi. Nullam purus est, laoreet sed facilisis dignissim, euismod ut eros. Vestibulum ac erat in sem efficitur luctus at sit amet urna. Sed vel massa ut purus lobortis ullamcorper in eu mi. Maecenas mauris diam, bibendum id lacus eget, rutrum mattis augue. Curabitur auctor lacus mauris, quis tristique leo volutpat quis. Quisque non scelerisque lacus. Proin ex arcu, rutrum ac lacus vitae, interdum pretium purus. Proin eget metus dapibus, blandit elit ut, sollicitudin ante. Nulla vulputate magna magna, et egestas tortor feugiat vel. 
-        Maecenas posuere elit id posuere bibendum. Quisque sollicitudin efficitur lorem, vel scelerisque enim feugiat sit amet. Suspendisse eu porttitor lacus. Vivamus venenatis cursus felis quis convallis. Ut ornare consequat augue, sed elementum tellus rhoncus id. Aenean a auctor nibh, in accumsan nisl. Duis eget tempor quam, quis vulputate dolor. Donec id magna et dui fringilla molestie congue id neque. Etiam pharetra justo eros, sed eleifend diam lacinia quis. Maecenas viverra porttitor interdum.
-    </p>
+    <div>
+        <h4>Introduction</h4>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed nisl nisi. Nullam purus est, laoreet sed facilisis dignissim, euismod ut eros. Vestibulum ac erat in sem efficitur luctus at sit amet urna. Sed vel massa ut purus lobortis ullamcorper in eu mi. Maecenas mauris diam, bibendum id lacus eget, rutrum mattis augue. Curabitur auctor lacus mauris, quis tristique leo volutpat quis. Quisque non scelerisque lacus. Proin ex arcu, rutrum ac lacus vitae, interdum pretium purus. Proin eget metus dapibus, blandit elit ut, sollicitudin ante. 
+        </p>
+    </div>
 </section>
 
+<!-- SECOND (bigger image) -->
+<section class="column">
+    <div class="img" style="flex: 0 0 500px;">
+        <img src="70-4.png" alt="1970s wooden model living room">
+    </div>
+
+    <p style="max-width: 200px;">This will be a caption for the image</p>
+</section>
+
+<!-- THIRD GROUP -->
 <section class="column">
     <div class="img">
-    <img src="70-4.png" alt="1970s kitchen">
+        <img src="70-3.png" alt="IKEA 1978 catalogue cover">
     </div>
 
-    <p style= "max-width: 100px;">This will be a caption for the image</p>
-</section>
-
-<section class="column">
-    <div class="img">
-    <img src="70-3.png" alt="1970s kitchen">
-    </div>
-
-    <p style= "max-width: 100px; text-align: left;">This will be a caption for the image</p>
+    <p style="max-width: 300px;">This will be a caption for the image</p>
 
     <div class="img">
-    <img src="70-9.png" alt="1970s kitchen">
+        <img src="70-9.png" alt="Flowery couch catalogue page">
     </div>
 
-    <p style= "max-width: 100px;">This will be a caption for the image</p>
+    <p style="max-width: 300px;">This will be a caption for the image</p>
 </section>
 
+<!-- FOURTH -->
 <div class="columnA">
-    <img src="70-5.png">
-    <p class= "caption">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</p>
+    <img src="70-5.png" alt="living room catalogue page" style="width: 80%; height: 80%;">
+    <p class="caption">Lorem Ipsum is simply dummy text...</p>
 </div>
 
+<!-- FIFTH -->
 <div class="column">
-    <img src="70-6.png">
-    <p class= "caption">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+    <img src="70-6.png" alt="living room">
+    <p class="caption">Lorem Ipsum is simply dummy text...</p>
 </div>
 
+<!-- SIXTH -->
 <div class="column">
-    <img src="70-7.png">
-    <p class= "caption">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+    <img src="70-7.png" alt="green wavy living room">
+    <p class="caption">Lorem Ipsum is simply dummy text...</p>
 </div>
 
+</section>
 
 <footer>
     <p>Thank you for coming!</p>
