@@ -150,7 +150,7 @@ gap:60px;
 
 .img{
 display:flex;
-align-items:flex-start; /* FIX: aligns text to top of image */
+align-items:flex-start;
 gap:40px;
 }
 
@@ -170,6 +170,31 @@ line-height:1.6;
 
 .img:nth-child(even){
 flex-direction:row-reverse;
+}
+
+.interactive-image{
+position: relative;
+}
+
+.default,
+.hover{
+width:100%;
+height:100%;
+object-fit: cover;
+display:block;
+border-radius:15px;
+}
+
+.hover{
+position:absolute;
+top:0;
+left:0;
+opacity:0;
+transition:opacity 0.3s ease-in-out;
+}
+
+.interactive-image:hover .hover{
+opacity:1;
 }
 
 /* FOOTER */
@@ -203,7 +228,7 @@ margin-top:40px;
 <section class="ALLCONTAINER">
 
 <h2 style="text-align: left; margin-left: 200px;">
-HEADING
+The Rise of Modern IKEA
 </h2>
 
 <div class="page">
@@ -216,8 +241,9 @@ HEADING
 <img src="20-1.png" alt="kitchen">
 
 <p class="left-p">
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+In the early 2000s, IKEA became a global symbol of modern, affordable design. 
+Its clean lines, light wood finishes, and minimalist layouts reflected a shift toward simplicity in everyday living. 
+Kitchens and living spaces were designed to be both functional and stylish, making good design accessible to more people than ever before.
 </p>
 
 </div>
@@ -235,8 +261,9 @@ Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
 </div>
 
 <p class="right-p">
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+The IKEA catalogue played a major role in shaping interior trends during this time. 
+It showcased fully designed rooms that inspired customers to rethink their own spaces. 
+Flat-pack furniture and self-assembly also became part of the IKEA identity, emphasizing convenience and affordability.
 </p>
 
 </div>
@@ -251,18 +278,17 @@ Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
 
 <div class="img">
 
-<img src="20-4.png" alt="IKEA storage system">
+<div class="interactive-image">
+<img class="default" src="20-4.png" style="height: 100%; width: 100%;">
+<img class="hover" src="20-7.png" style="height: 100%; width: 100%;">
+</div>
 
 <div class="caption">
-<h3>Heading 1</h3>
+<h3>Minimalist Living</h3>
 <p>
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-It has survived not only five centuries, but also the leap into electronic typesetting, 
-remaining essentially unchanged. It was popularised in the 1960s with the release of 
-Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
-software like Aldus PageMaker including versions of Lorem Ipsum.
+IKEA’s designs in the 2000s embraced minimalism, focusing on clean spaces and clutter-free environments. 
+Neutral colours, simple shapes, and practical layouts helped create calm and functional homes. 
+This approach appealed especially to younger generations looking for modern and affordable solutions.
 </p>
 </div>
 
@@ -271,18 +297,17 @@ software like Aldus PageMaker including versions of Lorem Ipsum.
 
 <div class="img">
 
-<img src="20-5.png" alt="IKEA modern furniture">
+<div class="interactive-image">
+<img class="default" src="20-5.png" style="height: 100%; width: 100%;">
+<img class="hover" src="20-8.png" style="height: 100%; width: 100%;">
+</div>
 
 <div class="caption">
-<h3>Heading 2</h3>
+<h3>Flat-Pack Innovation</h3>
 <p>
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-It has survived not only five centuries, but also the leap into electronic typesetting, 
-remaining essentially unchanged. It was popularised in the 1960s with the release of 
-Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
-software like Aldus PageMaker including versions of Lorem Ipsum.
+Flat-pack furniture revolutionized the way people bought and transported home goods. 
+By reducing packaging size, IKEA lowered costs and made shipping more efficient. 
+Customers became part of the process by assembling their own furniture, making the experience more interactive.
 </p>
 </div>
 
@@ -291,18 +316,16 @@ software like Aldus PageMaker including versions of Lorem Ipsum.
 
 <div class="img">
 
-<img src="20-6.png" alt="IKEA kitchen design">
+<div class="interactive-image">
+<img class="default" src="20-6.png" style="height: 100%; width: 100%;">
+<img class="hover" src="20-9.png" style="height: 100%; width: 100%;">
+</div>
 
 <div class="caption">
-<h3>Heading 3</h3>
+<h3>Global Expansion</h3>
 <p>
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-It has survived not only five centuries, but also the leap into electronic typesetting, 
-remaining essentially unchanged. It was popularised in the 1960s with the release of 
-Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
-software like Aldus PageMaker including versions of Lorem Ipsum.
+During the 2000s, IKEA expanded rapidly across the world, opening stores in new markets and reaching millions of customers. 
+Its consistent branding, recognizable store layouts, and Swedish identity made it one of the most influential furniture companies globally.
 </p>
 </div>
 
@@ -313,7 +336,7 @@ software like Aldus PageMaker including versions of Lorem Ipsum.
 </section>
 
 <footer>
-<p>Thank you for coming!</p>
+<p>thank you for coming!</p>
 </footer>
 
 </body>
