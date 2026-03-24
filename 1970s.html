@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to the 1970s</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to the 1970s</title>
 
 <style>
 * {
@@ -14,72 +13,15 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    color: #000000;
+    color: #000;
     font-size: 1.7rem;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
     background-color: papayawhip;
 }
 
-.ALLCONTAINER{
-    background-color:#ffffff;
-    padding:50px 100px;
-    margin:40px auto;
-    max-width:1600px;
-    border-radius:40px;
-    border:5px solid #ffffff;
-}
-
-/* Make all images responsive */
-img{
-    max-width:100%;
-    height:auto;
-    border-radius:20px;
-}
-
-/* layout fix */
-.content,
-.column,
-.columnA {
-    display: flex;
-    align-items: flex-start;
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.column,
-.columnA {
-    flex-wrap: wrap;
-}
-
-p {
-    margin: 0;
-}
-
-.image,
-.img {
-    flex: 0 0 300px;
-}
-
-.caption,
-.column p,
-.content p {
-    flex: 1;
-}
-
-/* NEW: small heading style */
-h4 {
-    margin-bottom: 10px;
-    color: #0058A3;
-}
-
-/* HEADER */
 header {
     background-color: #FFDB00;
     color: #0058A3;
     padding: 20px;
-    border-bottom: 1px solid papayawhip;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -88,7 +30,6 @@ header {
 
 nav {
     display: flex;
-    flex-wrap: wrap;
     gap: 15px;
 }
 
@@ -105,31 +46,92 @@ nav a:hover {
 .heading {
     text-align: center;
     padding: 80px 20px;
+    font-size: clamp(2.5rem, 8vw, 6rem);
     background-image: url(70-4.png);
-    background-repeat: no-repeat;
     background-size: cover;
 }
 
 .heading h1 {
-    font-size: 6rem;
-    color: #0058A3;
-    -webkit-text-stroke: #ffffff 0.2px;
-    margin: 0;
-    padding: 100px 20px;
-}
-
-h1 {
-    text-align: center;
     font-size: 4rem;
+    color: #0058A3;
+    margin: 0;
 }
 
+/* MAIN CONTAINER */
+.ALLCONTAINER{
+    background-color:#fff;
+    padding:40px;
+    margin:40px auto;
+    max-width:1400px;
+    border-radius:30px;
+}
+
+img{
+    width:100%;
+    height:auto;
+    border-radius:20px;
+}
+
+.row {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.img-box {
+    flex: 1 1 300px;
+}
+
+.text-box {
+    flex: 2 1 400px;
+}
+
+.caption {
+    font-size: 0.95rem;
+    max-width: 300px;
+}
+
+/* TITLES */
 h3 {
     text-align: center;
-    font-size: 4rem;
+    font-size: 2.5rem;
     color: #0058A3;
-    padding: 2px;
 }
 
+h4 {
+    margin-bottom: 10px;
+    color: #0058A3;
+}
+
+.interactive-image{
+  position: relative;
+}
+
+.default,
+.hover{
+  width:100%;
+  height:300px;
+  object-fit: cover;
+  display:block;
+  border-radius:15px;
+}
+
+.hover{
+  position:absolute;
+  top:0;
+  left:0;
+  opacity:0;
+  transition:opacity 0.3s ease-in-out;
+}
+
+.interactive-image:hover .hover{
+  opacity:1;
+}
+
+
+/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
@@ -137,44 +139,16 @@ footer {
     color: #0058A3;
 }
 
-/*the following responsive design code was sourced from GEN AI*/
-/* ---------- Tablet ---------- */
-@media (max-width: 1024px){
-.content,
-.column,
-.columnA{
-    flex-direction: column;
-}
-}
-
-/* ---------- Mobile ---------- */
+/* RESPONSIVE */
 @media (max-width:768px){
+    .row {
+        flex-direction: column;
+    }
 
-header{
-    flex-direction:column;
-    text-align:center;
-}
-
-nav{
-    justify-content:center;
-    margin-top:10px;
-}
-
-h3{
-    font-size:2.5rem;
-}
-
-.content,
-.column,
-.columnA{
-    flex-direction:column;
-    padding:20px;
-}
-
-.heading{
-    padding:60px 15px;
-}
-
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 </style>
 </head>
@@ -195,62 +169,82 @@ h3{
 
 <section class="ALLCONTAINER">
 
-<h3>HEADING</h3>
+<h3>In Line With the Times</h3>
 
-<!-- FIRST IMAGE + TEXT -->
-<section class="content">
-    <div class="image">
-        <img src="70-1.png" alt="1970s living room">
-    </div> 
-
-    <div>
-        <h4>Introduction</h4>
+<!-- INTRO -->
+<div class="row">
+    <div class="img-box">
+        <div class="interactive-image">
+            <img class="default"src="70-1.png">
+            <img class="hover" src="70-2.png">
+        </div>
+    </div>
+    <div class="text-box">
+        <h4>A Shift Towards the Future</h4>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed nisl nisi. Nullam purus est, laoreet sed facilisis dignissim, euismod ut eros. Vestibulum ac erat in sem efficitur luctus at sit amet urna. Sed vel massa ut purus lobortis ullamcorper in eu mi. Maecenas mauris diam, bibendum id lacus eget, rutrum mattis augue. Curabitur auctor lacus mauris, quis tristique leo volutpat quis. Quisque non scelerisque lacus. Proin ex arcu, rutrum ac lacus vitae, interdum pretium purus. Proin eget metus dapibus, blandit elit ut, sollicitudin ante. 
+            The 70s were all about wacky textures and sustainable practices. You can see IKEA shifting to a more environmental 
+            approach with the reuse of fabrics and multipurpose materials.
         </p>
     </div>
-</section>
-
-<!-- SECOND (bigger image) -->
-<section class="column">
-    <div class="img" style="flex: 0 0 500px;">
-        <img src="70-4.png" alt="1970s wooden model living room">
-    </div>
-
-    <p style="max-width: 200px;">This will be a caption for the image</p>
-</section>
-
-<!-- THIRD GROUP -->
-<section class="column">
-    <div class="img">
-        <img src="70-3.png" alt="IKEA 1978 catalogue cover">
-    </div>
-
-    <p style="max-width: 300px;">This will be a caption for the image</p>
-
-    <div class="img">
-        <img src="70-9.png" alt="Flowery couch catalogue page">
-    </div>
-
-    <p style="max-width: 300px;">This will be a caption for the image</p>
-</section>
-
-<!-- FOURTH -->
-<div class="columnA">
-    <img src="70-5.png" alt="living room catalogue page" style="width: 80%; height: 80%;">
-    <p class="caption">Lorem Ipsum is simply dummy text...</p>
 </div>
 
-<!-- FIFTH -->
-<div class="column">
-    <img src="70-6.png" alt="living room">
-    <p class="caption">Lorem Ipsum is simply dummy text...</p>
+<!-- BIG IMAGE + CAPTION -->
+<div class="row">
+    <div class="img-box">
+       <div class="interactive-image">
+            <img class="default"src="70-4.png">
+            <img class="hover" src="70-5.png">
+        </div>
+    </div>
+    <p class="caption"></p>
 </div>
 
-<!-- SIXTH -->
-<div class="column">
-    <img src="70-7.png" alt="green wavy living room">
-    <p class="caption">Lorem Ipsum is simply dummy text...</p>
+<!-- TWO IMAGES SIDE BY SIDE -->
+<div class="row">
+    <div class="img-box">
+       <div class="interactive-image">
+            <img class="default"src="70-3.png" style="height: 100%;">
+            <img class="hover" src="70-10.png" style="height: 100%;">
+        </div>
+        <p class="caption">This is the cover for the IKEA 79 and 77 catalogues.</p>
+    </div>
+
+    <div class="img-box">
+       <div class="interactive-image">
+            <img class="default"src="70-9.png" style="height: 100%;">
+            <img class="hover" src="70-11.png" style="height: 100%;">
+        </div>
+        <p class="caption">A cute use of colour in the catalogues I found interesting.</p>
+    </div>
+</div>
+
+<!-- IMAGE + TEXT -->
+<div class="row">
+    <div class="img-box">
+        <img src="70-5.png">
+    </div>
+    <p class="text-box">
+        IKEA began to arrange furniture in a way that you could tell every individual product apart from the setting. 
+    </p>
+</div>
+
+<!-- STACKED SECTIONS -->
+<div class="row">
+    <div class="img-box">
+       <div class="interactive-image">
+            <img class="default"src="70-6.png" style="height: 100%;">
+            <img class="hover" src="70-12.png" style="height: 100%;">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="img-box">
+       <div class="interactive-image">
+            <img class="default"src="70-7.png" style="height: 100%;">
+            <img class="hover" src="70-13.png" style="height: 100%;">
+        </div>
+    </div>
 </div>
 
 </section>
@@ -261,4 +255,3 @@ h3{
 
 </body>
 </html>
-
