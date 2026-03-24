@@ -19,6 +19,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-color: #efefef;
 }
 
 .ALLCONTAINER{
@@ -71,7 +72,7 @@ nav a:hover {
 }
 
 .heading h1 {
-    font-size: 6rem;
+   font-size: clamp(2.5rem, 8vw, 6rem);
     color: #f0ba26;
     -webkit-text-stroke: #1e1631 0.7px;
     margin-right: 100px;
@@ -131,7 +132,6 @@ h1 {
     border-radius:15px;
 }
 
-/* HOVER EFFECT (FIXED) */
 .interactive-image{
   position: relative;
 }
@@ -245,7 +245,7 @@ h1{
     <h1>The 1960s</h1>
 </section>
 
-<h1>Heading</h1>
+<h1>Post War Boom</h1>
 
 <div class="container">
   <img src="60-5.png" alt="Room Layout" style="width:100%;">
@@ -256,12 +256,13 @@ h1{
 
 <section class="ALLCONTAINER">
 
-<div>
-    <img src="60-3.png" alt="Simple Room Layout" style="padding: 20px; display: flex; justify-content: center;">
+<div class="interactive-image">
+    <img class= "default" src="60-3.png" alt="Simple Room Layout" style="height: 100%;">
+    <img class="hover" src="60-13.png" style="width: 100%; height: 100%;">
 </div>
 
 <div class="column">
-<h2>Heading</h2>
+<h2>The birth of showing off</h2>
 <p>
 Advertising was at it's most popular all over the world, and dynamic layouts became all the rage when it came to design.
 People were looking to do more with less, and storage compartments became a big thing that IKEA capitalized on. 
