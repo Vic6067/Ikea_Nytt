@@ -16,16 +16,18 @@ body {
     color: #000;
     font-size: 1rem;
     background-color: rgb(245, 245, 245);
+    text-align: center;
 }
 
 header {
-     background-color: #FFDB00;
+    background-color: #FFDB00;
     padding: 20px 20px;
+    text-align: center;
 }
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -46,12 +48,12 @@ nav h2 {
     cursor: pointer;
 }
 
-/* NAV MENU */
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: center;
 }
 
 nav ul li {
@@ -72,7 +74,6 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* DROPDOWN */
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -88,15 +89,14 @@ nav ul li a:hover {
     color: black;
 }
 
-/* Desktop hover */
 .dropdown:hover .dropdown-menu {
     display: block;
 }
 
-/* Mobile tap (focus) */
 .dropdown:focus-within .dropdown-menu {
     display: block;
 }
+
 .heading {
     text-align: center;
     padding: 80px 20px;
@@ -111,34 +111,43 @@ nav ul li a:hover {
     margin: 0;
 }
 
-/* MAIN CONTAINER */
 .ALLCONTAINER{
     background-color:#fff;
     padding:40px;
-    max-width:1200px;
+    max-width:1400px;
     border-radius:30px;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
 }
 
 img{
     width:100%;
     height:auto;
     border-radius:20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .row {
     display: flex;
     gap: 30px;
     margin-bottom: 30px;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
+    text-align: center;
 }
 
 .img-box {
     flex: 1 1 300px;
 }
 
+.text-box {
+    text-align: center;
+}
 
-/* TITLES */
 h3 {
     text-align: center;
     font-size: 2rem;
@@ -178,19 +187,19 @@ h4 {
 
 p{
     font-size: 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* FOOTER */
 .footer {
     text-align: center;
     padding: 20px;
     background-color: #FFDB00;
 }
 
-/* RESPONSIVE */
 @media (max-width:768px){
 
-    .menu-icon {
+.menu-icon {
     display: block;
 }
 
@@ -201,7 +210,6 @@ nav ul {
     background-color: #ffe95a;
 }
 
-/* Toggle menu */
 .menu-icon + ul {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -213,19 +221,19 @@ nav ul li a {
     border-top: 1px solid rgba(255,255,255,0.2);
 }
 
-/* Dropdown becomes inline */
 .dropdown-menu {
     position: static;
     border-radius: 0;
 }
-    .row {
-        flex-direction: column;
-    }
 
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
+.row {
+    flex-direction: column;
+}
+
+header {
+    flex-direction: column;
+    text-align: center;
+}
 }
 </style>
 </head>
@@ -269,7 +277,6 @@ nav ul li a {
 
 <h3>In Line With the Times</h3>
 
-<!-- INTRO -->
 <div class="row">
     <div class="img-box">
         <div class="interactive-image">
@@ -286,7 +293,6 @@ nav ul li a {
     </div>
 </div>
 
-<!-- BIG IMAGE + CAPTION -->
 <div class="row">
     <div class="img-box">
        <div class="interactive-image">
@@ -297,7 +303,6 @@ nav ul li a {
     <p class="caption"></p>
 </div>
 
-<!-- TWO IMAGES SIDE BY SIDE -->
 <div class="row">
     <div class="img-box">
        <div class="interactive-image">
@@ -316,7 +321,6 @@ nav ul li a {
     </div>
 </div>
 
-<!-- IMAGE + TEXT -->
 <div class="row">
     <div class="img-box">
         <img src="70-5.png">
@@ -326,7 +330,6 @@ nav ul li a {
     </p>
 </div>
 
-<!-- STACKED SECTIONS -->
 <div class="row">
     <div class="img-box">
        <div class="interactive-image">
