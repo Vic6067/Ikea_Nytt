@@ -15,7 +15,7 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: #383129;
-    font-size: 1.7rem;
+    font-size: 1rem;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -38,29 +38,82 @@ img{
 
 header {
     background-color: #1e1631;
-    color: #f0ba26;
-    padding: 20px;
-    border-bottom: 1px solid papayawhip;
+    padding: 0 20px;
+}
+
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+nav h2 {
+    color: #f0ba26;
+    margin: 10px 0;
 }
 
-nav a {
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    color: #f0ba26;
+    cursor: pointer;
+}
+
+/* NAV MENU */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 20px;
     text-decoration: none;
     color: #f0ba26;
-    font-size: 1.5rem;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
-nav a:hover {
-    text-decoration: underline;
+nav ul li a:hover {
+    background-color: #373161;
+    border-radius: 5px;
+}
+
+/* DROPDOWN */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #e4ddf9;
+    border-radius: 10px;
+    min-width: 150px;
+}
+
+.dropdown-menu li a {
+    padding: 10px 15px;
+    color: black;
+}
+
+/* Desktop hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Mobile tap (focus) */
+.dropdown:focus-within .dropdown-menu {
+    display: block;
 }
 
 .heading {
@@ -72,7 +125,7 @@ nav a:hover {
 }
 
 .heading h1 {
-   font-size: clamp(2.5rem, 8vw, 6rem);
+   font-size: 6rem;
     color: #f0ba26;
     -webkit-text-stroke: #1e1631 0.7px;
     margin-right: 100px;
@@ -87,6 +140,15 @@ h1 {
     color: #f0ba26;
     -webkit-text-stroke: #1e1631 0.7px;
     max-width: 700px;
+}
+
+h3
+{
+
+    font-size: 3rem;
+    text-align: left;
+    padding: 20px 40px;
+
 }
 
 .container {
@@ -157,7 +219,7 @@ h1 {
   opacity:1;
 }
 
-footer {
+.footer {
     text-align: center;
     padding: 20px;
     background-color: #1e1631;
@@ -169,6 +231,40 @@ footer {
 
 .heading h1{
     margin-right:40px;
+}
+
+.menu-icon {
+    display: block;
+}
+
+nav ul {
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    background-color: #2c2245;
+}
+
+/* Toggle menu */
+.menu-icon + ul {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display: flex;
+}
+
+nav ul li a {
+    padding: 15px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Dropdown becomes inline */
+.dropdown-menu {
+    position: static;
+    border-radius: 0;
+}
+
+.about {
+    flex-direction: column;
+    align-items: center;
 }
 
 h1{
@@ -186,19 +282,36 @@ h1{
 /* -------- Mobile -------- */
 @media (max-width:768px){
 
+.ALLCONTAINER{
+    padding:20px;
+    margin:20px;
+    border-radius:20px;
+}
+
 header{
-    flex-direction:column;
     text-align:center;
 }
 
-nav{
-    justify-content:center;
-    margin-top:10px;
+body{
+    text-align: center;
 }
 
-h1{
-    margin-left:20px;
-    font-size:3rem;
+/* NAV */
+nav{
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul{
+    width:100%;
+}
+
+/* HEADINGS */
+h1,
+h3{
+    margin-left:0;
+    font-size:2.5rem;
+    text-align:center;
 }
 
 .heading{
@@ -207,23 +320,40 @@ h1{
 
 .heading h1{
     margin-right:0;
-    padding:60px 15px;
+    padding:40px 10px;
 }
 
+/* HERO TEXT */
 .top-left{
     position:static;
-    margin-left:0;
-    text-align:center;
+    margin:20px auto;
+    padding:20px;
+    font-size:1.5rem;
+    max-width:100%;
 }
 
+/* COLUMNS */
 .column{
     columns:1;
     padding:20px;
-    margin:20px;
+    margin:20px 0;
 }
 
+/* GRID */
 .image-grid{
     grid-template-columns: 1fr;
+}
+
+/* IMAGE FIX */
+.image-grid img,
+.default,
+.hover{
+    height:auto;
+}
+
+/* CONTAINER */
+.container{
+    padding:20px;
 }
 
 }
@@ -234,18 +364,39 @@ h1{
 <body>
 
 <header>
+
+<nav>
     <h2>Ikéa-Nytt</h2>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="1970s.html">Move to the 1970s</a>
-    </nav>
+
+    <input type="checkbox" id="menu-toggle">
+    <label class="menu-icon"></label>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+
+        <li class="dropdown">
+            <a href="#">Decades</a>
+            <ul class="dropdown-menu">
+                <li><a href="1950s.html">1950s</a></li>
+                <li><a href="1960s.html">1960s</a></li>
+                <li><a href="1970s.html">1970s</a></li>
+                <li><a href="1980s.html">1980s</a></li>
+                <li><a href="1990s.html">1990s</a></li>
+                <li><a href="2000s.html">2000s</a></li>
+            </ul>
+        </li>
+
+        <li><a href="ABOUT.html">Sources</a></li>
+    </ul>
+</nav>
+
 </header>
 
 <section class="heading">
     <h1>The 1960s</h1>
 </section>
 
-<h1>Post War Boom</h1>
+
 
 <div class="container">
   <img src="60-5.png" alt="Room Layout" style="width:100%;">
@@ -256,8 +407,10 @@ h1{
 
 <section class="ALLCONTAINER">
 
+<h3>Post War Boom</h3>
+
 <div class="interactive-image">
-    <img class= "default" src="60-3.png" alt="Simple Room Layout" style="height: 100%;">
+    <img class="default" src="60-3.png" alt="Simple Room Layout" style="height: 100%;">
     <img class="hover" src="60-13.png" style="width: 100%; height: 100%;">
 </div>
 
@@ -301,6 +454,13 @@ This was where IKEA really leaned into showcasing their product in room layouts 
 </section>
 
 </section>
+
+<div class="footer">
+    <a style="color: #f0ba26;" href="1960s.html">Back to top</a>
+</div>
+
+</body>
+</html>
 
 <footer>
     <p>Thank you for coming!</p>
