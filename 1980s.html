@@ -17,7 +17,7 @@
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             color: #000000;
-            font-size: 1.7rem;
+            font-size: 1rem;
             background-color: rgb(237, 237, 237);
         }
 
@@ -29,125 +29,256 @@
             border-radius:30px;
         }
 
-        header {
-            background-color: #0058A3;
-            color: #FFDB00;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+     header {
+     background-color: #0058A3;
+    padding: 20px 20px;
+}
 
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
-        nav a {
-            text-decoration: none;
-            color: #FFDB00;
-            font-size: 1.5rem;
-        }
+nav h2 {
+    color: #FFDB00;
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+#menu-toggle {
+    display: none;
+}
 
-        .heading {
-            text-align: center;
-            padding: 80px 20px;
-            background-image: url(80-9.jpg);
-            background-size: cover;
-        }
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    color: #FFDB00;
+    cursor: pointer;
+}
 
-        .heading h1 {
-            font-size: 6rem;
-            color: #FFDB00;
-            -webkit-text-stroke: #0058A3 0.5px;
-        }
+/* NAV MENU */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
 
-        h2, h3 {
-            text-align: center;
-            font-size: 4rem;
-        }
+nav ul li {
+    position: relative;
+}
 
-        .container {
-            position: relative;
-            text-align: center;
-        }
+nav ul li a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #FFDB00;
+    font-weight: bold;
+    font-size: 1rem;
+}
 
-        .top-right {
-            position: absolute;
-            top: 8px;
-            right: 16px;
-            margin-right: 300px;
-            margin-top: 100px;
-            max-width: 900px;
-            background-color: rgba(255, 255, 255, 0.6);
-            padding: 50px 100px;
-            columns: 2;
-        }
+nav ul li a:hover {
+    background-color: #0a4f8d;
+    border-radius: 5px;
+}
 
-        .column {
-            display: flex;
-            justify-content: center;
-            padding: 50px 100px;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+/* DROPDOWN */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #dde6f9;
+    border-radius: 10px;
+    min-width: 150px;
+}
 
-        img {
-            border-radius: 25px;
-        }
+.dropdown-menu li a {
+    padding: 10px 15px;
+    color: black;
+}
 
-        .interactive-image{
-            position: relative;
-        }
+/* Desktop hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
 
-        .default,
-        .hover{
-            width:100%;
-            height:100%;
-            object-fit: cover;
-            display:block;
-            border-radius:15px;
-        }
+/* Mobile tap */
+.dropdown:focus-within .dropdown-menu {
+    display: block;
+}
 
-        .hover{
-            position:absolute;
-            top:0;
-            left:0;
-            opacity:0;
-            transition:opacity 0.3s ease-in-out;
-        }
+.heading {
+    text-align: center;
+    padding: 80px 20px;
+    background-image: url(80-9.jpg);
+    background-size: cover;
+    background-position: center;
+}
 
-        .interactive-image:hover .hover{
-            opacity:1;
-        }
-        
-        .caption {
-            max-width: 500px;
-        }
+.heading h1 {
+    font-size: 6rem;
+    color: #FFDB00;
+    -webkit-text-stroke: #0058A3 0.5px;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #0058A3;
-            color: #FFDB00;
-        }
+h2, h3 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    margin-right: 300px;
+    margin-top: 100px;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 50px 100px;
+}
+
+.column {
+    display: flex;
+    justify-content: center;
+    padding: 50px 100px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+}
+
+.interactive-image{
+    position: relative;
+}
+
+.default,
+.hover{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    display:block;
+    border-radius:15px;
+}
+
+.hover{
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:0;
+    transition:opacity 0.3s ease-in-out;
+}
+
+.interactive-image:hover .hover{
+    opacity:1;
+}
+
+.caption {
+    max-width: 500px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0058A3;
+}
+
+/* RESPONSIVE */
+@media (max-width:768px){
+
+    .menu-icon {
+    display: block;
+}
+
+nav ul {
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    background-color: #0874d3;
+}
+
+/* Toggle menu */
+.menu-icon + ul {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display: flex;
+}
+
+nav ul li a {
+    padding: 15px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+
+/* stack layout */
+.column {
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* FIX OVERLAY TEXT */
+.top-right {
+    position: static;
+    margin: 0;
+    padding: 20px;
+    columns: 1;
+    max-width: 100%;
+}
+
+/* spacing fixes */
+.ALLCONTAINER {
+    padding: 20px;
+    margin: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+}
     </style>
 </head>
 
 <body>
 
 <header>
+
+<nav>
     <h2>Ikéa-Nytt</h2>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="1990s.html">Move to the 1990s</a>
-    </nav>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon"></label>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+
+        <li class="dropdown">
+            <a href="#">Decades</a>
+            <ul class="dropdown-menu">
+                <li><a href="1950s.html">1950s</a></li>
+                <li><a href="1960s.html">1960s</a></li>
+                <li><a href="1970s.html">1970s</a></li>
+                <li><a href="1980s.html">1980s</a></li>
+                <li><a href="1990s.html">1990s</a></li>
+                <li><a href="2000s.html">2000s</a></li>
+            </ul>
+        </li>
+
+        <li><a href="ABOUT.html">Sources</a></li>
+    </ul>
+</nav>
+
 </header>
 
 <section class="heading">
@@ -159,13 +290,13 @@
     <div class="container">
         <img src="80-6.png" style="width:100%;">
         <div class="top-right">
-            Lorem Ipsum is simply dummy text...
+            I really enjoy the layout of this page purely because of how
+            balanced and asymetrical it is!
         </div>
     </div>
 
-    <h3>HEADING</h3>
+    <h3>Technology Baby!</h3>
 
-    <!-- FIRST IMAGE -->
     <section class="column">
         <div class="interactive-image">
             <img class="default" src="80-4.png">
@@ -173,7 +304,6 @@
         </div>
     </section>
 
-    <!-- SECOND ROW -->
     <section class="column">
         <div class="interactive-image">
             <img class="default" src="80-3.png">
@@ -181,7 +311,7 @@
         </div>
 
         <p style="max-width: 300px;">
-            Bright, functional furniture defined IKEA’s global expansion in the 80s.
+            Bright, functional furniture defined IKEA's global expansion in the 80s.
         </p>
 
         <div class="interactive-image">
@@ -218,6 +348,12 @@
 
 </section>
 
+<div class="footer">
+    <a style="color: #FFDB00;" href="1980s.html">Back to top</a>
+</div>
+
+</body>
+</html>
 <footer>
     <p>Thank you for coming!</p>
 </footer>
